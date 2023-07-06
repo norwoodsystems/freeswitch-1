@@ -15,7 +15,7 @@
       <node type="allow" cidr="$${domain}/32"/>
       <node type="allow" cidr="192.168.44.0/24"/>
       <node type="allow" cidr="192.168.1.102/32"/>
-      <node type="allow" cidr="198.199.100.45/32"/>
+      <node type="allow" cidr="$${gateway}/32"/>
     </list>
 
     <!--
@@ -28,7 +28,7 @@
       <!-- domain= is special it scans the domain from the directory to build the ACL -->
       <node type="allow" domain="$${domain_ip}"/>
       <node type="allow" domain="$${domain}"/>
-      <node type="allow" domain="198.199.100.45"/>
+      <node type="allow" domain="$${gateway}"/>
       <!-- use cidr= if you wish to allow ip ranges to this domains acl. -->
       <!-- <node type="allow" cidr="192.168.0.0/24"/> -->
     </list>

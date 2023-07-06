@@ -14,6 +14,13 @@ apt-get -y install libz-dev libjpeg-dev libsqlite3-dev libcurl4-openssl-dev libp
 apt-get -y install libspeex-dev libspeexdsp-dev libedit-dev libtiff-dev yasm haveged libldns-dev uuid-dev && \
 apt-get -y install libopus-dev libopusfile-dev libsndfile-dev libshout3-dev libmpg123-dev libmp3lame-dev && \
 \
+# spandsp lib requires now autoconf 2.71 or higher
+# it's not updated in debian buster yet
+wget https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz && \
+tar xzf autoconf-2.71.tar.gz && \
+cd autoconf-2.71 && \
+./configure && make && make install \
+\
 TOKEN=pat_3zxJRNhMmoygoL4LUJ4Z3NQ6 && \
 \ 
 wget --http-user=signalwire --http-password=$TOKEN -O /usr/share/keyrings/signalwire-freeswitch-repo.gpg https://freeswitch.signalwire.com/repo/deb/debian-release/signalwire-freeswitch-repo.gpg && \
